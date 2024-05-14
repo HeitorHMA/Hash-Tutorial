@@ -1,7 +1,15 @@
+//Create Hash class//
+class HashMap{
+    constructor(key,value){
+        this.key = key;
+        this.value = value;
+    };
+    hash(key){
+        let chave = this.key.charCodeAt(0)
+        return chave;
+    }
+};
 
-//Create hash function//
-function hash(value){
-    return value.charCodeAt(0)
-}
-const Bolsonaro = "Bolsonaro"
-console.log(hash(Bolsonaro))
+
+const escola = new HashMap("toninho","tornado");
+console.log(escola.hash())
