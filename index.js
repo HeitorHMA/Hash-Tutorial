@@ -85,13 +85,23 @@ function remove(key){
     return false
 
 }
+
+//Create length() function//
+
+function length(Array){
+    let arrayLength = 0;
+    for(i = 0 ; i < Array.length ; i++){
+        if(Array[i] !== ""){
+            arrayLength++
+        };
+    };
+    return arrayLength
+};
 // Test Area//
 
 const escola = new HashMap("toninho","tornado");
-console.log(set(escola.key,escola.value));
-console.log(remove("toninho"));
-console.log(bucketList)
-console.log(set("bolsonaro","alfa"))
+console.log(set("bolsonaoooono","alfa"))
 console.log(set("bolsonaro","beta"))
-console.log(remove("bolsonaro"))
+console.log(set("toninho","tornado"));
 console.log(bucketList)
+console.log(length(bucketList))
