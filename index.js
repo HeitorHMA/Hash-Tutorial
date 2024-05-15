@@ -26,12 +26,13 @@ class HashMap{
 
 function set(key,value){
         let hashCode = hash(key)
+        let hashBucket = new HashMap(key,value)
         const hashIndex = hashCode % bucketSize
         const index = hashIndex
         bucketList.splice(index,1)
         bucketList = [
             ...bucketList.slice(0, index),
-            value,
+            hashBucket,
             ...bucketList.slice(index)
         ];
         return bucketList
@@ -97,11 +98,51 @@ function length(Array){
     };
     return arrayLength
 };
+
+//Create clear() function//
+
+function clear(Array){
+    for(let i = 0; i < Array.length; i++)
+    {
+        Array[i] = "";
+    }
+    return Array;
+};
+
+//Create keys() function//
+
+function keys(Array){
+    const onlyKeys = [];
+    for(let i = 0; i < Array.length; i++)
+    {
+       if(Array[i] !== ""){
+        const key = Array[i]
+         onlyKeys.push(key.key)
+       }
+    }
+    return onlyKeys
+}
+
+//Create keyCodes() function//
+
+function keyCodes(Array){
+    const onlyKeys = [];
+    for(let i = 0; i < Array.length; i++)
+    {
+       if(Array[i] !== ""){
+        const key = Array[i]
+         onlyKeys.push(hash(key.key))
+       }
+    }
+    return onlyKeys
+}
+
+//Create
 // Test Area//
 
 const escola = new HashMap("toninho","tornado");
 console.log(set("bolsonaoooono","alfa"))
 console.log(set("bolsonaro","beta"))
-console.log(set("toninho","tornado"));
 console.log(bucketList)
-console.log(length(bucketList))
+console.log(keys(bucketList))
+console.log(keyCodes(bucketList))
