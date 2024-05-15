@@ -137,12 +137,41 @@ function keyCodes(Array){
     return onlyKeys
 }
 
-//Create
+//Create values() function//
+
+function values(Array){
+    const onlyValues = [];
+    for(let i = 0; i < Array.length; i++)
+    {
+       if(Array[i] !== ""){
+        const value = Array[i]
+         onlyValues.push((value.value))
+       }
+    }
+    return onlyValues
+}
+
+//Create entries() function//
+
+function entries(Array){
+    const allEntries = [];
+    for(let i = 0; i < Array.length; i++)
+    {
+       if(Array[i] !== ""){
+        const entry = Array[i]
+        allEntries.push((`${entry.key},${entry.value}`))
+       }
+    }
+    return allEntries
+};
+
 // Test Area//
 
 const escola = new HashMap("toninho","tornado");
-console.log(set("bolsonaoooono","alfa"))
-console.log(set("bolsonaro","beta"))
+console.log(set("ht","ml"))
+console.log(set("c","ss"))
+console.log(set("java","script"))
 console.log(bucketList)
 console.log(keys(bucketList))
-console.log(keyCodes(bucketList))
+console.log(values(bucketList))
+console.log(entries(bucketList))
