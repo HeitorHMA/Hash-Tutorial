@@ -1,13 +1,13 @@
 //Create Bucket List array//
 let bucketList = [1, 2 ,3 ,4 ,5, 6 ,7,8 ,9 ,10 ,11 ,12 ,13 ,14 ,15 ]
 let bucketSize = 16;
-//Create Hash class//
+//Create HashMapclass//
 class HashMap{
     constructor(key,value){
         this.key = key;
         this.value = value;
     }};
-
+// Create hash() function//
  function hash(key){
         let hashCode = 0;
         const primeNumber = 11;
@@ -16,7 +16,7 @@ class HashMap{
         }
         return hashCode
     };
-// 
+// Create set() function//
 function set(key,value){
         let hashCode = hash(key)
         const hashIndex = hashCode % bucketSize
@@ -29,6 +29,7 @@ function set(key,value){
         ];
         return bucketList
     };
+// Create get() function//
 function get(key){
     let hashCode = hash(key);
     let index = hashCode % bucketSize;
@@ -37,9 +38,7 @@ function get(key){
 
 }
 
-
-
-
+// Test Area//
 const escola = new HashMap("toninho","tornado");
 console.log(set(escola.key,escola.value));
 console.log(get("toninho"));
